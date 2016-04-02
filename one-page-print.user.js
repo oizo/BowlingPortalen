@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BowlingPortalen - One page print
 // @namespace    https://github.com/oizo/bowlingportalen/
-// @downloadURL  https://raw.githubusercontent.com/
+// @downloadURL  https://github.com/oizo/bowlingportalen/raw/master/one-page-print.user.js
 // @version      0.1
 // @description  Make all the printable league game tables from BowlingPortalen fit a standard A4 paper
 // @author       Danny Hvam
