@@ -2,10 +2,10 @@
 // @name         BowlingPortalen - One page print
 // @namespace    https://github.com/oizo/bowlingportalen/
 // @downloadURL  https://github.com/oizo/bowlingportalen/raw/master/one-page-print.user.js
-// @version      0.1
+// @version      0.1.1
 // @description  Make all the printable league game tables from BowlingPortalen fit a standard A4 paper
 // @author       Danny Hvam
-// @match        http://bowlingportalen.dk/DBwF/HoldTurnering/UdskrivHoldkamp/*
+// @match        http://bowlingportalen.dk/*
 // @run-at       document-start
 // @grant        GM_addStyle
 // ==/UserScript==
@@ -39,7 +39,7 @@ function replaceAll(str, find, replace) {
   return str.replace(new RegExp(find, 'g'), replace);
 }
 
-function fixPrintTurnamentGame() {
+function adjustTurnamentMatchPage() {
 
     // make all player name fields editable
     var printplayer = document.getElementsByClassName('printplayer');
@@ -89,5 +89,11 @@ function fixPrintTurnamentGame() {
 
 (function() {
     'use strict';
-    fixPrintTurnamentGame();
+
+    var pathname = window.location.pathname;
+    if (pathname.match("/DBwF/HoldTurnering/UdskrivHoldkamp/")) {
+        adjustTurnamentMatchPage();
+    }
+
 })();
+
